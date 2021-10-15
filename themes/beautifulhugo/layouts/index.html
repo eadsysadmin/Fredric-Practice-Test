@@ -1,0 +1,85 @@
+{{ define "main" }}
+  <div role="main" class="container">      
+    <div class="row">  
+        <div class="col-md-3 hidden-xs">
+            <div class="sidebar-nav-fixed affix SB">
+                <div class="well">
+                    <ul class="nav ">
+                        <li class="nav-header"></li>
+                        <li class="active"><a href="#">Otago Polytchnic</a>
+                        </li>
+                        <li><a href="#WiFi">Wifi</a>
+                        </li>
+                        <li><a href="#Software">Software</a>
+                        </li>
+                        <li><a href="#Gitlab">Git</a>
+                        </li>
+                        <li><a href="#I:/ Drive">I: Drive</a>
+                        </li>
+                        <li><a href="#Citrix">Citrix</a>
+                        </li>
+                        <li><a href="#VMWare View Client">VMWARE</a>
+                        </li>
+                        <li><a href="#Safari">Safari</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--/.well -->
+            </div>
+            <!--/sidebar-nav-fixed -->
+        </div>      
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        {{ with .Content }}
+          <div class="well">
+            {{.}}
+          </div>          
+        {{ end }}
+
+        <div class="posts-list">
+          {{ $pag := .Paginate (where .Site.Pages "Type" "post") }}
+          {{ range $pag.Pages }}
+          {{ if ne .Title "Posts" }} 
+            <article class="post-preview">
+              <a href="{{ .Permalink }}">
+                <h2 id="{{ .Title }}" class="post-title">{{ .Title }}</h2>
+                {{ if .Params.subtitle }}
+                  <h3 class="post-subtitle">
+                  {{ .Params.subtitle }}
+                  </h3>
+                  
+                {{ end }}
+              </a>
+              <div class="post-entry">
+                  {{ .Content }}
+              </div>
+              {{ if .Params.tags }}
+                <span class="post-meta">
+                {{ range .Params.tags }}
+                  #<a href="{{ $.Site.LanguagePrefix }}/tags/{{ . | urlize }}">{{ . }}</a>&nbsp;
+                {{ end }}
+                </span>
+              {{ end }}
+            </article>
+            {{ end }}
+          {{ end }}
+        </div>
+
+        {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+          <ul class="pager main-pager">
+            {{ if .Paginator.HasPrev }}
+              <li class="previous">
+                <a href="{{ .URL }}page/{{ .Paginator.Prev.PageNumber }}">&larr; {{ i18n "newerPosts" }}</a>
+              </li>
+            {{ end }}
+            {{ if .Paginator.HasNext }}
+              <li class="next">
+                <a href="{{ .URL }}page/{{ .Paginator.Next.PageNumber }}">{{ i18n "olderPosts" }} &rarr;</a>
+              </li>
+            {{ end }}
+          </ul>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+{{ end }}
+
