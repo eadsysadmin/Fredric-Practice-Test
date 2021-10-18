@@ -7,9 +7,9 @@
 ### {{ .Title }}
 
 {{ range .Commits -}}
-- {{ if .Scope }}**{{ .Scope }}:** {{ end }}{{ (regexReplaceAll "(Co-\\w*-by.*)" .Subject "") | trim }}
+- {{ if .Scope }}**{{ .Scope }}:** {{ end }}{{ .Subject }}
 {{ end }}
-{{- end -}}
+{{ end -}}
 
 {{- if .NoteGroups -}}
 {{ range .NoteGroups -}}
