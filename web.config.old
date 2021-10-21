@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.webServer>
+        <httpRedirect enabled="true" destination="https://bit-project-sites.pages.op-bit.nz/help/" />
+        <rewrite>
+            <rules>
+                <rule name="ReverseProxyInboundRule1" enabled="false" stopProcessing="true">
+                    <match url="(.*)" />
+                    <action type="Rewrite" url="http://https://bit-project-sites.pages.op-bit.nz/help/{R:1}" />
+                </rule>
+            </rules>
+        </rewrite>
+    </system.webServer>
+</configuration>

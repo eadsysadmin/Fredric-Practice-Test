@@ -1,0 +1,132 @@
+baseurl = "https://bit.pages.op-bit.nz/"
+contentdir    = "content"
+layoutdir     = "layouts"
+publishdir    = "public"
+title = "ICT Helpsite"
+canonifyurls  = true
+
+
+DefaultContentLanguage = "en"
+theme = "beautifulhugo"
+metaDataFormat = "yaml"
+pygmentsUseClasses = true
+pygmentCodeFences = true
+#disqusShortname = "XXX"
+#googleAnalytics = "XXX"
+
+
+[Params]
+  subtitle = ""
+  logo = "img/avatar-icon.png"
+  favicon = "img/favicon.ico"
+  dateFormat = "January 2, 2006"
+  commit = false
+  rss = true
+  comments = true
+#  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
+
+[[Params.bigimg]]
+  src = "img/op1.jpg"
+  desc = "Otago Polytechnic"
+#[[Params.bigimg]]
+#  src = "img/sphere.jpg"
+#  desc = "Sphere"
+#[[Params.bigimg]]
+#  src = "img/hexagon.jpg"
+#  desc = "Hexagon"
+
+[Author]
+  name = "BIT Project - Web Development Team"
+  email = "barcoak1@student.op.ac.nz"
+  #facebook = "username"
+  #googleplus = "+username" # or xxxxxxxxxxxxxxxxxxxxx
+  #gitlab = "username"
+  #github = "username"
+  #twitter = "username"
+  #reddit = "username"
+  #linkedin = "username"
+  #xing = "username"
+  #stackoverflow = "users/XXXXXXX/username"
+  #snapchat = "username"
+  instagram = "bit.project"
+  #youtube = "user/username" # or channel/channelname
+  #soundcloud = "username"
+  #spotify = "username"
+  #bandcamp = "username"
+  #itchio = "username"
+
+
+[[menu.main]]
+    identifier = "Home"
+    name = "Home"
+    weight = 1
+
+    [[menu.main]]
+        parent = "Home"
+        name = "OP"
+        url = "post/op"
+        weight = 1
+
+    [[menu.main]]
+        parent = "Home"
+        name = "WiFi"
+        url = "post/wifi"
+        weight = 2
+    
+    [[menu.main]]
+        parent = "Home"
+        name = "Software"
+        url = "post/software"
+        weight = 3  
+    
+    [[menu.main]]
+        parent = "Home"
+        name = "Git"
+        url = "post/git"
+        weight = 4
+
+    [[menu.main]]
+        parent = "Home"
+        name = "I: Drive"
+        url = "post/i-drive"
+        weight = 5 
+
+    [[menu.main]]
+        parent = "Home"
+        name = "Citrix"
+        url = "post/citrix"
+        weight = 6
+
+    [[menu.main]]
+        parent = "Home"
+        name = "VMWare View Client"
+        url = "post/vmware"
+        weight = 7  
+
+    [[menu.main]]
+        parent = "Home"
+        name = "Safari"
+        url = "post/safari"
+        weight = 8  
+    
+[[menu.main]]
+    identifier = "About"
+    name = "About"
+    weight = 2
+
+    [[menu.main]]
+        parent = "About"
+        name = "About Us"
+        url = "page/about/about-us"
+        weight = 1    
+
+[[menu.main]]
+    identifier = "Contact Us"
+    name = "Contact Us"
+    weight = 3
+
+    [[menu.main]]
+        parent = "Contact Us"
+        name = "Contact"
+        url = "page/contact/contactus"
+        weight = 1
